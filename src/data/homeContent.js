@@ -15,21 +15,21 @@ export const buttonMenuItems = [
 export const homeCards = [
   {
     id: "menu",
-    title: "Menu",
+    translationKey: "homeCards.menu",
     href: "/menu",
     image: "/images/home/menu.jpg",
     alt: "Old Shakespeare restaurant menu",
   },
   {
     id: "reservation",
-    title: "Reservation",
+    translationKey: "homeCards.bookTable",
     href: "/reservation",
     image: "/images/home/reservation.jpg",
     alt: "Reserved table at a restaurant",
   },
   {
     id: "about",
-    title: "Our Restaurant",
+    translationKey: "homeCards.about",
     href: "/about",
     image: "/images/home/about.jpg",
     alt: "Old Shakespeare restaurant terrace in Esentepe",

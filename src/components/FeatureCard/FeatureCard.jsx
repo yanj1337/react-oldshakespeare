@@ -1,16 +1,24 @@
-import './FeatureCard.css'
+import { useLanguage } from "../../i18n/LanguageContext";
+import "./FeatureCard.css";
 
-export function FeatureCard({ id, title, href, image, alt }) {
+export function FeatureCard({ id, translationKey, href, image, alt }) {
+  const { t, localizePath } = useLanguage();
+
   return (
     <article className="feature-card" id={id}>
-      <img className="feature-card__image" src={image} alt={alt} loading="lazy" />
+      <img
+        className="feature-card__image"
+        src={image}
+        alt={alt}
+        loading="lazy"
+      />
 
       <a className="feature-card__link" href={href}>
-        <span>{title}</span>
+        <span>{t(translationKey)}</span>
         <span className="feature-card__arrow" aria-hidden="true">
           →
         </span>
       </a>
     </article>
-  )
+  );
 }

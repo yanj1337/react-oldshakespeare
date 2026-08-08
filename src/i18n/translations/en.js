@@ -13,4 +13,14 @@ export const en = {
     contact: "Contact",
     blogSoon: "Blog (Soon)",
   },
+
+  homePage: {
+    location: "Esentepe · Northern Cyprus",
+  },
+
+  homeCards: {
+    menu: "Menu",
+    bookTable: "Book a table",
+    about: "Our Restaurant",
+  },
 };

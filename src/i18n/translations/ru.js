@@ -13,4 +13,14 @@ export const ru = {
     contact: "Контакты",
     blogSoon: "Блог (скоро)",
   },
+
+  homePage: {
+    location: "Есентепе · Северный Кипр",
+  },
+
+  homeCards: {
+    menu: "Меню",
+    bookTable: "Забронировать стол",
+    about: "О нас",
+  },
 };

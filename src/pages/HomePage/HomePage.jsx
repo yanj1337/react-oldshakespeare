@@ -1,9 +1,13 @@
-import { FeatureCard } from '../../components/FeatureCard/FeatureCard'
-import { SiteHeader } from '../../components/SiteHeader/SiteHeader'
-import { homeCards } from '../../data/homeContent'
-import './HomePage.css'
+import { FeatureCard } from "../../components/FeatureCard/FeatureCard";
+import { SiteHeader } from "../../components/SiteHeader/SiteHeader";
+import { homeCards } from "../../data/homeContent";
+import { languages } from "../../i18n/config";
+import { useLanguage } from "../../i18n/LanguageContext";
+import "./HomePage.css";
 
 export function HomePage() {
+  const { t, localizePath } = useLanguage();
+
   return (
     <main className="home-page" id="top">
       <div className="home-layout">
@@ -17,7 +21,7 @@ export function HomePage() {
           <SiteHeader />
 
           <div className="hero-panel__content">
-            <p className="hero-panel__location">Esentepe · Northern Cyprus</p>
+            <p className="hero-panel__location">{t("homePage.location")}</p>
             <h1 id="home-title">
               <span>Old</span>
               <span>Shakespeare</span>
@@ -33,5 +37,5 @@ export function HomePage() {
         </aside>
       </div>
     </main>
-  )
+  );
 }
