@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import { SiteHeader } from '../../components/SiteHeader/SiteHeader'
 import './ReservationPage.css'
 
 export function ReservationPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
   function handleSubmit(event) {
     event.preventDefault()
-    setIsSubmitted(true)
+    window.location.href = '/reservation-confirmed'
   }
 
   return (
@@ -81,12 +78,6 @@ export function ReservationPage() {
               <button className="reservation-form__submit" type="submit">
                 Book a table
               </button>
-
-              {isSubmitted && (
-                <p className="reservation-form__status" role="status">
-                  Thank you. Your reservation request is ready for confirmation.
-                </p>
-              )}
             </form>
           </div>
 

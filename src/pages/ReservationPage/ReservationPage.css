@@ -221,15 +221,6 @@
   transform: translateY(-1px);
 }
 
-.reservation-form__status {
-  grid-column: 1 / -1;
-  margin: -4px 0 0;
-  color: var(--color-gold-light);
-  font-size: 0.82rem;
-  line-height: 1.5;
-  text-align: center;
-}
-
 .reservation-footer {
   min-height: 62px;
   display: flex;
@@ -317,8 +308,7 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .reservation-form__submit,
-  .reservation-form__status {
+  .reservation-form__submit {
     grid-column: auto;
   }
 

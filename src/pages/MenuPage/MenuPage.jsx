@@ -48,8 +48,8 @@ export function MenuPage() {
           <div className="menu-hero__content">
             <p>Kitchen &amp; bar · Esentepe</p>
             <h1 id="menu-title">
-              <span>The</span>
-              <span>menu</span>
+              <span className="menu-hero__article">The</span>
+              <span className="menu-hero__title">menu</span>
             </h1>
           </div>
         </section>
