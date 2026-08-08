@@ -31,10 +31,9 @@
 }
 
 .site-header__desktop-nav {
-  width: 138px;
   display: flex;
   align-items: center;
-  flex: 0 0 138px;
+  flex: 0 0 auto;
 }
 
 .site-header__desktop-nav a {
@@ -42,7 +41,7 @@
   height: 42px;
   display: grid;
   place-items: center;
-  flex: 1;
+  flex: 0 0 auto;
   padding: 0 10px;
   color: var(--color-text-muted);
   font-size: 0.72rem;
@@ -50,6 +49,7 @@
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
   transition: color 200ms ease;
 }
 
@@ -73,6 +73,10 @@
   white-space: nowrap;
 }
 
+.booking-button__short {
+  display: none;
+}
+
 @media (max-width: 1279px) {
   .site-header {
     left: 50%;
@@ -90,5 +94,13 @@
   .booking-button {
     padding-inline: 11px;
     font-size: 0.63rem;
+  }
+
+  .booking-button__full {
+    display: none;
+  }
+
+  .booking-button__short {
+    display: inline;
   }
 }

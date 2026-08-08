@@ -1,15 +1,15 @@
 export const navigationItems = [
-  { label: "Menu", href: "/menu" },
-  { label: "About", href: "/about" },
-  //{ label: 'Contact', href: '/contact' },
+  { translationKey: "header.menu", href: "/menu" },
+  { translationKey: "header.about", href: "/about" },
+  //{ label: 'Contact', href: '/contact' }, #замена на translationkey
 ];
 
 export const buttonMenuItems = [
-  { label: "Menu", href: "/menu" },
-  { label: "Reservation", href: "/reservation" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-  { label: "Blog (Soon)", isDisabled: true },
+  { translationKey: "buttonMenu.menu", href: "/menu" },
+  { translationKey: "buttonMenu.bookTable", href: "/reservation" },
+  { translationKey: "buttonMenu.about", href: "/about" },
+  { translationKey: "buttonMenu.contact", href: "/contact" },
+  { translationKey: "buttonMenu.blogSoon", isDisabled: true },
 ];
 
 export const homeCards = [
