@@ -1,16 +1,19 @@
-import { SiteHeader } from '../../components/SiteHeader/SiteHeader'
-import './ReservationPage.css'
+import { SiteHeader } from "../../components/SiteHeader/SiteHeader";
+import "./ReservationPage.css";
 
 export function ReservationPage() {
   function handleSubmit(event) {
-    event.preventDefault()
-    window.location.href = '/reservation-confirmed'
+    event.preventDefault();
+    window.location.href = "/reservation-confirmed";
   }
 
   return (
     <main className="reservation-page" id="top">
       <div className="reservation-layout">
-        <section className="reservation-hero" aria-labelledby="reservation-title">
+        <section
+          className="reservation-hero"
+          aria-labelledby="reservation-title"
+        >
           <img
             className="reservation-hero__image"
             src="/images/home/reservation.jpg"
@@ -28,21 +31,29 @@ export function ReservationPage() {
           </div>
         </section>
 
-        <section className="reservation-details" aria-labelledby="reservation-form-title">
+        <section
+          className="reservation-details"
+          aria-labelledby="reservation-form-title"
+        >
           <div className="reservation-card">
             <div className="reservation-card__intro">
               <p className="reservation-card__eyebrow">Reservations</p>
               <h2 id="reservation-form-title">Reserve your table</h2>
               <p className="reservation-card__copy">
-                Join us for good food, warm hospitality and an evening to remember
-                at Old Shakespeare.
+                Join us for good food, warm hospitality and an evening to
+                remember at Old Shakespeare.
               </p>
             </div>
 
             <form className="reservation-form" onSubmit={handleSubmit}>
               <label className="reservation-field">
                 <span>Name</span>
-                <input name="name" type="text" placeholder="Jane Smith" required />
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Jane Smith"
+                  required
+                />
               </label>
 
               <label className="reservation-field">
@@ -56,13 +67,25 @@ export function ReservationPage() {
               </label>
 
               <label className="reservation-field">
-                <span>Phone number</span>
-                <input name="phone" type="tel" placeholder="+90 533 000 00 00" required />
+                <span>WhatsApp number</span>
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="+90 533 000 00 00"
+                  required
+                />
               </label>
 
               <label className="reservation-field">
-                <span>People</span>
-                <input name="people" type="number" min="1" max="20" placeholder="2" required />
+                <span>Guests</span>
+                <input
+                  name="people"
+                  type="number"
+                  min="1"
+                  max="15"
+                  placeholder="2"
+                  required
+                />
               </label>
 
               <label className="reservation-field">
@@ -88,5 +111,5 @@ export function ReservationPage() {
         </section>
       </div>
     </main>
-  )
+  );
 }

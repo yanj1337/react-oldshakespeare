@@ -3,7 +3,7 @@ export const en = {
     menu: "Menu",
     about: "About",
     bookTable: "Book a table",
-    bookTableShort: "Book",
+    //bookTableShort: "Book",
   },
 
   buttonMenu: {

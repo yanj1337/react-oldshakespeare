@@ -73,9 +73,9 @@
   white-space: nowrap;
 }
 
-.booking-button__short {
+/* .booking-button__short {
   display: none;
-}
+} */
 
 @media (max-width: 1279px) {
   .site-header {
@@ -90,7 +90,7 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 360px) {
   .booking-button {
     padding-inline: 11px;
     font-size: 0.63rem;
@@ -100,7 +100,7 @@
     display: none;
   }
 
-  .booking-button__short {
+  /* .booking-button__short {
     display: inline;
-  }
+  } */
 }

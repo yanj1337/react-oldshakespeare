@@ -31,7 +31,7 @@ export function SiteHeader() {
 
       <a className="booking-button" href={localizePath("/reservation")}>
         <span className="booking-button__full">{t("header.bookTable")}</span>
-        <span className="booking-button__short">{t("header.bookTableShort")}</span>
+        {/* <span className="booking-button__short">{t("header.bookTableShort")}</span> */}
       </a>
     </header>
   );

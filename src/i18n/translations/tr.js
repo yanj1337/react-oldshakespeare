@@ -2,13 +2,13 @@ export const tr = {
   header: {
     menu: "Menü",
     about: "Hakkımızda",
-    bookTable: "Masa ayırt",
-    bookTableShort: "Ayırt",
+    bookTable: "Ayırt",
+    //bookTableShort: "Ayırt",
   },
 
   buttonMenu: {
     menu: "Menü",
-    bookTable: "Masa ayırt",
+    bookTable: "Masa Ayırt",
     about: "Hakkımızda",
     contact: "İletişim",
     blogSoon: "Blog (Yakında)",
