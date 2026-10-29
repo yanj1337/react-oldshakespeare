@@ -54,10 +54,6 @@
 }
 
 .contact-hero h1 {
-  position: absolute;
-  left: clamp(32px, 4vw, 56px);
-  right: clamp(32px, 4vw, 56px);
-  bottom: clamp(34px, 4vw, 56px);
   display: grid;
   margin: 0;
   color: var(--color-text);
@@ -375,9 +371,6 @@
   }
 
   .contact-hero h1 {
-    left: 28px;
-    right: 28px;
-    bottom: 28px;
     font-size: clamp(3.5rem, 15vw, 4.2rem);
   }
 

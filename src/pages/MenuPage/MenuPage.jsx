@@ -1,5 +1,8 @@
+import { HeroContent } from '../../components/HeroContent/HeroContent'
 import { useState } from 'react'
 import { SiteHeader } from '../../components/SiteHeader/SiteHeader'
+import { HeroLocation } from '../../components/HeroLocation/HeroLocation'
+import { useLanguage } from '../../i18n/LanguageContext'
 import { drinksMenu, foodMenu } from '../../data/menuContent'
 import './MenuPage.css'
 
@@ -30,6 +33,7 @@ function MenuGroup({ group }) {
 }
 
 export function MenuPage() {
+  const { t } = useLanguage()
   const [activeMenu, setActiveMenu] = useState('food')
   const activeGroups = menuViews[activeMenu]
 
@@ -45,13 +49,14 @@ export function MenuPage() {
 
           <SiteHeader />
 
-          <div className="menu-hero__content">
-            <p>Kitchen &amp; bar · Esentepe</p>
+          <HeroContent>
+            <HeroLocation />
             <h1 id="menu-title">
-              <span className="menu-hero__article">The</span>
-              <span className="menu-hero__title">menu</span>
+              {t('menuPage.title').split('\n').map((line, index) => (
+                <span key={line}>{index > 0 ? ' ' : ''}{line}</span>
+              ))}
             </h1>
-          </div>
+          </HeroContent>
         </section>
 
         <section className="menu-panel" aria-labelledby="menu-panel-title">

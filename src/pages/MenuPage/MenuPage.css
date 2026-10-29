@@ -51,48 +51,20 @@
   transform: scale(1.015);
 }
 
-.menu-hero__content {
-  position: absolute;
-  left: clamp(32px, 5vw, 88px);
-  right: clamp(32px, 5vw, 88px);
-  bottom: clamp(42px, 6vw, 92px);
-}
-
-.menu-hero__content > p {
-  margin: 0 0 18px 4px;
-  color: var(--color-gold-light);
-  font-size: 0.82rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
 .menu-hero h1 {
   display: grid;
-  justify-items: start;
-  gap: 2px;
   margin: 0;
   color: var(--color-text);
-  font-family: var(--font-display);
+  font-family: 'Forum', var(--font-display);
+  font-size: clamp(4.4rem, 6.7vw, 6rem);
   font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
   text-transform: uppercase;
 }
 
-.menu-hero__article {
-  margin-left: 6px;
-  color: var(--color-gold-light);
-  font-family: var(--font-body);
-  font-size: clamp(0.82rem, 1vw, 1rem);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.3em;
-}
-
-.menu-hero__title {
-  font-size: clamp(7rem, 9.5vw, 8.75rem);
-  font-weight: 400;
-  line-height: 0.8;
-  letter-spacing: -0.045em;
+.menu-hero h1 span + span {
+  margin-left: clamp(18px, 4vw, 60px);
 }
 
 .menu-panel {
@@ -348,19 +320,8 @@
     object-position: center;
   }
 
-  .menu-hero__content {
-    left: 24px;
-    right: 24px;
-    bottom: 32px;
-  }
-
-  .menu-hero__content > p {
-    margin-bottom: 12px;
-    font-size: 0.68rem;
-  }
-
-  .menu-hero__title {
-    font-size: clamp(4.5rem, 22vw, 6rem);
+  .menu-hero h1 {
+    font-size: clamp(3.5rem, 15vw, 4.2rem);
   }
 
   .menu-panel {

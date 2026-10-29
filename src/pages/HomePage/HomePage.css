@@ -45,23 +45,6 @@
   object-position: center 34%;
 }
 
-.hero-panel__content {
-  position: absolute;
-  left: clamp(28px, 5vw, 84px);
-  right: clamp(28px, 5vw, 84px);
-  bottom: clamp(32px, 6vw, 88px);
-  min-width: 0;
-}
-
-.hero-panel__location {
-  margin: 0 0 22px;
-  color: var(--color-gold-light);
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 .hero-panel h1 {
   width: 100%;
   max-width: 100%;
@@ -133,18 +116,6 @@
 
   .hero-panel__image {
     object-position: 58% center;
-  }
-
-  .hero-panel__content {
-    left: 24px;
-    right: 24px;
-    bottom: 44px;
-    text-align: center;
-  }
-
-  .hero-panel__location {
-    margin-bottom: 18px;
-    font-size: 0.62rem;
   }
 
   .hero-panel h1 {

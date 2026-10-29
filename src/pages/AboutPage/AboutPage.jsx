@@ -1,7 +1,12 @@
+import { HeroContent } from '../../components/HeroContent/HeroContent'
 import { SiteHeader } from '../../components/SiteHeader/SiteHeader'
+import { HeroLocation } from '../../components/HeroLocation/HeroLocation'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './AboutPage.css'
 
 export function AboutPage() {
+  const { t } = useLanguage()
+
   return (
     <main className="about-page" id="top">
       <div className="about-layout">
@@ -9,55 +14,54 @@ export function AboutPage() {
           <img
             className="about-hero__image"
             src="/images/about/dining-room.jpg"
-            alt="The dining room at Old Shakespeare Pub & Restaurant"
+            alt={t('aboutPage.imageAlt')}
           />
 
           <SiteHeader />
 
-          <div className="about-hero__content">
-            <p>Pub &amp; Restaurant · Esentepe</p>
+          <HeroContent>
+            <HeroLocation />
             <h1 id="about-title">
-              <span>Our</span>
-              <span>story</span>
+              {t('aboutPage.title').split('\n').map((line, index) => (
+                <span key={line}>{index > 0 ? ' ' : ''}{line}</span>
+              ))}
             </h1>
-          </div>
+          </HeroContent>
         </section>
 
-        <aside className="about-side" aria-label="About Old Shakespeare">
+        <aside className="about-side" aria-label={t('aboutPage.sectionLabel')}>
           <article className="about-story">
             <img
               className="about-story__image"
               src="/images/about/antiques.jpg"
-              alt="Antiques in the Old Shakespeare dining room"
+              alt={t('aboutPage.storyImageAlt')}
             />
             <div className="about-story__content">
               <p className="about-story__eyebrow">Old Shakespeare</p>
-              <h2>An English-style atmosphere in Northern Cyprus</h2>
+              <h2>{t('aboutPage.storyTitle')}</h2>
               <p>
-                We invite you to visit an unforgettable restaurant with a pleasant
-                English-style atmosphere.
+                {t('aboutPage.storyIntro')}
               </p>
               <p>
-                With interesting antiques and pleasant music, you can relax and enjoy
-                dishes prepared by our team.
+                {t('aboutPage.storyDescription')}
               </p>
             </div>
           </article>
 
           <div className="about-details">
             <article className="about-detail">
-              <img src="/images/about/bar.jpg" alt="The bar at Old Shakespeare" />
+              <img src="/images/about/bar.jpg" alt={t('aboutPage.barImageAlt')} />
               <div className="about-detail__content">
-                <p>The bar</p>
-                <h2>A comfortable place for an evening and good company.</h2>
+                <p>{t('aboutPage.barLabel')}</p>
+                <h2>{t('aboutPage.barTitle')}</h2>
               </div>
             </article>
 
             <article className="about-detail">
-              <img src="/images/about/food.jpg" alt="A dish prepared at Old Shakespeare" />
+              <img src="/images/about/food.jpg" alt={t('aboutPage.kitchenImageAlt')} />
               <div className="about-detail__content">
-                <p>Our kitchen</p>
-                <h2>Delicious, professionally prepared food of high quality.</h2>
+                <p>{t('aboutPage.kitchenLabel')}</p>
+                <h2>{t('aboutPage.kitchenTitle')}</h2>
               </div>
             </article>
           </div>

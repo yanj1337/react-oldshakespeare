@@ -56,22 +56,6 @@
   object-position: center;
 }
 
-.about-hero__content {
-  position: absolute;
-  left: clamp(30px, 5vw, 86px);
-  right: clamp(30px, 5vw, 86px);
-  bottom: clamp(38px, 6vw, 92px);
-}
-
-.about-hero__content p {
-  margin: 0 0 20px 4px;
-  color: var(--color-gold-light);
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
 .about-hero h1 {
   display: grid;
   margin: 0;
@@ -260,12 +244,6 @@
 
   .about-hero__image {
     object-position: 43% center;
-  }
-
-  .about-hero__content {
-    left: 25px;
-    right: 25px;
-    bottom: 48px;
   }
 
   .about-hero h1 {

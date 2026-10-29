@@ -1,4 +1,7 @@
+import { HeroContent } from '../../components/HeroContent/HeroContent'
 import { SiteHeader } from '../../components/SiteHeader/SiteHeader'
+import { HeroLocation } from '../../components/HeroLocation/HeroLocation'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './ContactPage.css'
 
 const phoneNumber = '+90 542 851 44 99'
@@ -8,13 +11,13 @@ const mapEmbed =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1568.4692866537932!2d33.5293684112149!3d35.34063953224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de47904146bb15%3A0x51f8b427376ec901!2sOld%20Shakespeare%20Pub%26Restaurant!5e0!3m2!1sen!2s!4v1678835314519!5m2!1sen!2s'
 
 const openingHours = [
-  ['Tuesday', '12:00 - 01:30'],
-  ['Wednesday', '12:00 - 01:30'],
-  ['Thursday', '12:00 - 01:30'],
-  ['Friday', '12:00 - 01:30'],
-  ['Saturday', '12:00 - 01:30'],
-  ['Sunday', '12:00 - 01:30'],
-  ['Monday', 'Closed'],
+  ['tuesday', '12:00 - 01:30'],
+  ['wednesday', '12:00 - 01:30'],
+  ['thursday', '12:00 - 01:30'],
+  ['friday', '12:00 - 01:30'],
+  ['saturday', '12:00 - 01:30'],
+  ['sunday', '12:00 - 01:30'],
+  ['monday', null],
 ]
 
 const socialLinks = [
@@ -36,6 +39,8 @@ const socialLinks = [
 ]
 
 export function ContactPage() {
+  const { t, localizePath } = useLanguage()
+
   return (
     <main className="contact-page" id="top">
       <div className="contact-layout">
@@ -43,77 +48,81 @@ export function ContactPage() {
           <img
             className="contact-hero__image"
             src="/images/home/menu.jpg"
-            alt="A dish served at Old Shakespeare Pub & Restaurant"
+            alt={t('contactPage.imageAlt')}
           />
 
           <SiteHeader />
 
-          <h1 id="contact-title">
-            <span>Get in</span>
-            <span>touch</span>
-          </h1>
+          <HeroContent>
+            <HeroLocation />
+            <h1 id="contact-title">
+              {t('contactPage.title').split('\n').map((line, index) => (
+                <span key={line}>{index > 0 ? ' ' : ''}{line}</span>
+              ))}
+            </h1>
+          </HeroContent>
         </section>
 
-        <section className="contact-side" aria-label="Old Shakespeare contact details">
+        <section className="contact-side" aria-label={t('contactPage.sectionLabel')}>
           <div className="contact-grid">
             <article className="contact-panel contact-opening">
-              <h2>Opening</h2>
+              <h2>{t('contactPage.openingTitle')}</h2>
 
               <div className="contact-opening__list">
                 {openingHours.map(([day, hours]) => (
                   <div
-                    className={day === 'Monday' ? 'contact-opening__row is-closed' : 'contact-opening__row'}
+                    className={hours === null ? 'contact-opening__row is-closed' : 'contact-opening__row'}
                     key={day}
                   >
-                    <span>{day}</span>
-                    <span>{hours}</span>
+                    <span>{t(`contactPage.${day}`)}</span>
+                    <span>{hours ?? t('contactPage.closed')}</span>
                   </div>
                 ))}
               </div>
 
-              <p className="contact-opening__note">Open until the last guest.</p>
+              <p className="contact-opening__note">{t('contactPage.openingNote')}</p>
             </article>
 
-            <div className="contact-gallery" aria-label="Old Shakespeare restaurant gallery">
-              <img src="/images/home/reservation.jpg" alt="Table setting at Old Shakespeare" />
-              <img src="/images/home/hero-interior.jpg" alt="Old Shakespeare dining room" />
-              <img src="/images/home/about.jpg" alt="Old Shakespeare terrace" />
-              <img src="/images/home/menu.jpg" alt="Dish from the Old Shakespeare menu" />
+            <div className="contact-gallery" aria-label={t('contactPage.galleryLabel')}>
+              <img src="/images/home/reservation.jpg" alt={t('contactPage.tableImageAlt')} />
+              <img src="/images/home/hero-interior.jpg" alt={t('contactPage.interiorImageAlt')} />
+              <img src="/images/home/about.jpg" alt={t('contactPage.terraceImageAlt')} />
+              <img src="/images/home/menu.jpg" alt={t('contactPage.dishImageAlt')} />
             </div>
 
             <div className="contact-map">
               <iframe
                 src={mapEmbed}
-                title="Old Shakespeare Pub & Restaurant location"
+                title={t('contactPage.mapTitle')}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <a href={mapLink} target="_blank" rel="noreferrer">
-                Get directions
+                {t('contactPage.directions')}
               </a>
             </div>
 
             <article className="contact-panel contact-info">
-              <h2>Contact</h2>
+              <h2>{t('contactPage.contactTitle')}</h2>
 
               <dl className="contact-info__list">
                 <div>
-                  <dt>Address</dt>
+                  <dt>{t('contactPage.address')}</dt>
                   <dd>
                     <a href={mapLink} target="_blank" rel="noreferrer">
                       Turtle Bay Sitesi 99400
-                      <span>Esentepe, Northern Cyprus</span>
+                      <span>{t('contactPage.addressLocation')}</span>
                     </a>
                   </dd>
                 </div>
                 <div>
-                  <dt>Phone &amp; WhatsApp</dt>
+                  <dt>{t('contactPage.phoneWhatsapp')}</dt>
                   <dd>
                     <a href={`tel:${phoneLink}`}>{phoneNumber}</a>
                   </dd>
                 </div>
                 <div>
-                  <dt>Email</dt>
+                  <dt>{t('contactPage.email')}</dt>
                   <dd>
                     <a href="mailto:oldshakespearepub@gmail.com">
                       oldshakespearepub@gmail.com
@@ -123,7 +132,7 @@ export function ContactPage() {
               </dl>
 
               <div className="contact-follow">
-                <p>Follow</p>
+                <p>{t('contactPage.follow')}</p>
                 <div className="contact-follow__links">
                   {socialLinks.map((social) => (
                     <a
@@ -145,7 +154,7 @@ export function ContactPage() {
 
           <footer className="contact-footer">
             <span>© 2026 Old Shakespeare</span>
-            <a href="/">Back home</a>
+            <a href={localizePath('/')}>{t('contactPage.backHome')}</a>
           </footer>
         </section>
       </div>

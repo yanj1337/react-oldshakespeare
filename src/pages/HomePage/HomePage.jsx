@@ -1,13 +1,11 @@
+import { HeroContent } from '../../components/HeroContent/HeroContent'
 import { FeatureCard } from "../../components/FeatureCard/FeatureCard";
 import { SiteHeader } from "../../components/SiteHeader/SiteHeader";
 import { homeCards } from "../../data/homeContent";
-import { languages } from "../../i18n/config";
-import { useLanguage } from "../../i18n/LanguageContext";
+import { HeroLocation } from "../../components/HeroLocation/HeroLocation";
 import "./HomePage.css";
 
 export function HomePage() {
-  const { t, localizePath } = useLanguage();
-
   return (
     <main className="home-page" id="top">
       <div className="home-layout">
@@ -20,14 +18,14 @@ export function HomePage() {
 
           <SiteHeader />
 
-          <div className="hero-panel__content">
-            <p className="hero-panel__location">{t("homePage.location")}</p>
+          <HeroContent>
+            <HeroLocation />
             <h1 id="home-title">
               <span>Old</span>
               <span>Shakespeare</span>
             </h1>
             <p className="hero-panel__subtitle">Pub &amp; Restaurant</p>
-          </div>
+          </HeroContent>
         </section>
 
         <aside className="home-cards" aria-label="Explore Old Shakespeare">

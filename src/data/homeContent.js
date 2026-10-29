@@ -9,7 +9,7 @@ export const buttonMenuItems = [
   { translationKey: "buttonMenu.bookTable", href: "/reservation" },
   { translationKey: "buttonMenu.about", href: "/about" },
   { translationKey: "buttonMenu.contact", href: "/contact" },
-  { translationKey: "buttonMenu.blogSoon", isDisabled: true },
+  //{ translationKey: "buttonMenu.blogSoon", isDisabled: true },
 ];
 
 export const homeCards = [

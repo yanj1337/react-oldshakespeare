@@ -1,0 +1,15 @@
+.hero-location {
+  margin: 0 0 22px;
+  color: var(--color-gold-light);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .hero-location {
+    margin-bottom: 18px;
+    font-size: 0.62rem;
+  }
+}

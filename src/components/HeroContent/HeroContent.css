@@ -1,0 +1,16 @@
+.hero-content {
+  position: absolute;
+  left: clamp(32px, 4vw, 56px);
+  right: clamp(32px, 4vw, 56px);
+  bottom: clamp(34px, 4vw, 56px);
+  min-width: 0;
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  .hero-content {
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+  }
+}

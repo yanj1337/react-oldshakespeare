@@ -1,10 +1,15 @@
+import { HeroContent } from '../../components/HeroContent/HeroContent'
 import { SiteHeader } from "../../components/SiteHeader/SiteHeader";
+import { HeroLocation } from "../../components/HeroLocation/HeroLocation";
+import { useLanguage } from "../../i18n/LanguageContext";
 import "./ReservationPage.css";
 
 export function ReservationPage() {
+  const { t, localizePath } = useLanguage();
+
   function handleSubmit(event) {
     event.preventDefault();
-    window.location.href = "/reservation-confirmed";
+    window.location.href = localizePath("/reservation-confirmed");
   }
 
   return (
@@ -17,18 +22,19 @@ export function ReservationPage() {
           <img
             className="reservation-hero__image"
             src="/images/home/reservation.jpg"
-            alt="A reserved table at Old Shakespeare Pub & Restaurant"
+            alt={t("reservationPage.imageAlt")}
           />
 
           <SiteHeader />
 
-          <div className="reservation-hero__content">
-            <p>Old Shakespeare</p>
+          <HeroContent>
+            <HeroLocation />
             <h1 id="reservation-title">
-              <span>Book</span>
-              <span>a table</span>
+              {t("reservationPage.title").split("\n").map((line, index) => (
+                <span key={line}>{index > 0 ? " " : ""}{line}</span>
+              ))}
             </h1>
-          </div>
+          </HeroContent>
         </section>
 
         <section
@@ -37,27 +43,26 @@ export function ReservationPage() {
         >
           <div className="reservation-card">
             <div className="reservation-card__intro">
-              <p className="reservation-card__eyebrow">Reservations</p>
-              <h2 id="reservation-form-title">Reserve your table</h2>
+              <p className="reservation-card__eyebrow">{t("reservationPage.eyebrow")}</p>
+              <h2 id="reservation-form-title">{t("reservationPage.formTitle")}</h2>
               <p className="reservation-card__copy">
-                Join us for good food, warm hospitality and an evening to
-                remember at Old Shakespeare.
+                {t("reservationPage.description")}
               </p>
             </div>
 
             <form className="reservation-form" onSubmit={handleSubmit}>
               <label className="reservation-field">
-                <span>Name</span>
+                <span>{t("reservationPage.name")}</span>
                 <input
                   name="name"
                   type="text"
-                  placeholder="Jane Smith"
+                  placeholder={t("reservationPage.namePlaceholder")}
                   required
                 />
               </label>
 
               <label className="reservation-field">
-                <span>Email</span>
+                <span>{t("reservationPage.email")}</span>
                 <input
                   name="email"
                   type="email"
@@ -67,7 +72,7 @@ export function ReservationPage() {
               </label>
 
               <label className="reservation-field">
-                <span>WhatsApp number</span>
+                <span>{t("reservationPage.whatsappNumber")}</span>
                 <input
                   name="phone"
                   type="tel"
@@ -77,7 +82,7 @@ export function ReservationPage() {
               </label>
 
               <label className="reservation-field">
-                <span>Guests</span>
+                <span>{t("reservationPage.guests")}</span>
                 <input
                   name="people"
                   type="number"
@@ -89,24 +94,24 @@ export function ReservationPage() {
               </label>
 
               <label className="reservation-field">
-                <span>Date</span>
+                <span>{t("reservationPage.date")}</span>
                 <input name="date" type="date" required />
               </label>
 
               <label className="reservation-field">
-                <span>Time</span>
+                <span>{t("reservationPage.time")}</span>
                 <input name="time" type="time" required />
               </label>
 
               <button className="reservation-form__submit" type="submit">
-                Book a table
+                {t("reservationPage.bookTable")}
               </button>
             </form>
           </div>
 
           <footer className="reservation-footer">
             <span>Old Shakespeare Pub &amp; Restaurant</span>
-            <a href="/">Back home</a>
+            <a href={localizePath("/")}>{t("reservationPage.backHome")}</a>
           </footer>
         </section>
       </div>

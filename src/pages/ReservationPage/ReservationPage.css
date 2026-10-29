@@ -49,22 +49,6 @@
   transform: scale(1.015);
 }
 
-.reservation-hero__content {
-  position: absolute;
-  left: clamp(30px, 5vw, 86px);
-  right: clamp(30px, 5vw, 86px);
-  bottom: clamp(38px, 6vw, 92px);
-}
-
-.reservation-hero__content p {
-  margin: 0 0 20px 5px;
-  color: var(--color-gold-light);
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
 .reservation-hero h1 {
   display: grid;
   margin: 0;
@@ -287,12 +271,6 @@
 
   .reservation-hero__image {
     object-position: 53% center;
-  }
-
-  .reservation-hero__content {
-    left: 25px;
-    right: 25px;
-    bottom: 48px;
   }
 
   .reservation-hero h1 {
