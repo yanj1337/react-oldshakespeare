@@ -1,16 +1,29 @@
-# React + Vite
+# Old Shakespeare
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Website for Old Shakespeare Pub & Restaurant, built with React and Vite. The interface supports English, Russian, and Turkish URLs and content.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20.19+ or 22.12+
+- npm
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+git clone https://github.com/yanj1337/react-oldshakespeare.git
+cd react-oldshakespeare
+npm ci
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+Open the local address printed by Vite (normally `http://localhost:5173`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Checks and production build
+
+```bash
+npm run lint
+npm run build
+npm run preview
+```
+
+The production output is written to `dist/`. When deploying, configure the host to serve `index.html` as a fallback for direct visits to localized paths such as `/ru/menu`.

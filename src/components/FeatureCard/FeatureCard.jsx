@@ -13,7 +13,7 @@ export function FeatureCard({ id, translationKey, href, image, alt }) {
         loading="lazy"
       />
 
-      <a className="feature-card__link" href={href}>
+      <a className="feature-card__link" href={localizePath(href)}>
         <span>{t(translationKey)}</span>
         <span className="feature-card__arrow" aria-hidden="true">
           →
